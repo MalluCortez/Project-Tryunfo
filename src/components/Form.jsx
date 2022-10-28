@@ -10,61 +10,81 @@ export class Form extends Component {
 
     return (
       <div>
-        <input
-          type="text"
-          data-testid="name-input"
-          value={ cardName }
-          onChange={ onInputChange }
-        />
+        <h3 data-testid="name-input">
+          Nome
+          <br />
+          <input
+            type="text"
+            value={ cardName }
+            onChange={ onInputChange }
+          />
+        </h3>
 
-        <textarea
-          data-testid="description-input"
-          cols="30"
-          rows="10"
-          value={ cardDescription }
-          onChange={ onInputChange }
-        />
+        <h3 data-testid="description-input">
+          Descrição
+          <br />
+          <textarea
+            cols="30"
+            rows="10"
+            value={ cardDescription }
+            onChange={ onInputChange }
+          />
+        </h3>
 
-        <input
-          type="number"
-          data-testid="attr1-input"
-          value={ cardAttr1 }
-          onChange={ onInputChange }
-        />
+        <h3 data-testid="attr1-input">
+          Attr1
+          <input
+            type="number"
+            value={ cardAttr1 }
+            onChange={ onInputChange }
+          />
+        </h3>
 
-        <input
-          type="number"
-          data-testid="attr2-input"
-          value={ cardAttr2 }
-          onChange={ onInputChange }
-        />
+        <h3 data-testid="attr2-input">
+          Attr2
+          <input
+            type="number"
+            value={ cardAttr2 }
+            onChange={ onInputChange }
+          />
+        </h3>
 
-        <input
-          type="number"
-          data-testid="attr3-input"
-          value={ cardAttr3 }
-          onChange={ onInputChange }
-        />
+        <h3 data-testid="attr3-input">
+          Attr3
+          <input
+            type="number"
+            value={ cardAttr3 }
+            onChange={ onInputChange }
+          />
+        </h3>
 
-        <input
-          type="text"
-          data-testid="image-input"
-          value={ cardImage }
-          onChange={ onInputChange }
-        />
+        <h3 data-testid="image-input">
+          Imagem
+          <input
+            type="text"
+            value={ cardImage }
+            onChange={ onInputChange }
+          />
+        </h3>
 
-        <select data-testid="rare-input" value={ cardRare } onChange={ onInputChange }>
-          <option value="normal">normal</option>
-          <option value="raro">raro</option>
-          <option value="muito raro">muito raro</option>
-        </select>
+        <h3 data-testid="rare-input">
+          Raridade
+          <br />
+          <select value={ cardRare } onChange={ onInputChange }>
+            <option value="normal">normal</option>
+            <option value="raro">raro</option>
+            <option value="muito raro">muito raro</option>
+          </select>
+        </h3>
 
-        <input
-          type="checkbox"
-          data-testid="trunfo-input"
-          checked={ cardTrunfo }
-          onChange={ onInputChange }
-        />
+        <h4 data-testid="trunfo-input">
+          <input
+            type="checkbox"
+            checked={ cardTrunfo }
+            onChange={ onInputChange }
+          />
+          Super Trybe Trunfo
+        </h4>
 
         <button
           type="submit"
