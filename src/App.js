@@ -64,7 +64,7 @@ class App extends React.Component {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare,
       cardTrunfo, hasTrunfo, isSaveButtonDisabled,
-      onInputChange, onSaveButtonClick } = this.state;
+      /* onInputChange, onSaveButtonClick */ } = this.state;
     return (
       <div>
         <Form

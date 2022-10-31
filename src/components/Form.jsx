@@ -5,7 +5,7 @@ class Form extends Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare,
-      cardTrunfo, hasTrunfo, isSaveButtonDisabled,
+      cardTrunfo, /* hasTrunfo */ isSaveButtonDisabled,
       onInputChange, onSaveButtonClick } = this.props;
 
     return (
@@ -129,7 +129,7 @@ Form.propTypes = {
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.bool,
-  hasTrunfo: PropTypes.bool,
+  /* hasTrunfo: PropTypes.bool, */
   isSaveButtonDisabled: PropTypes.bool,
   onInputChange: PropTypes.func,
   onSaveButtonClick: PropTypes.func,
@@ -144,7 +144,7 @@ Form.defaultProps = {
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.bool,
-  hasTrunfo: PropTypes.bool,
+  /* hasTrunfo: PropTypes.bool, */
   isSaveButtonDisabled: PropTypes.bool,
   onInputChange: PropTypes.func,
   onSaveButtonClick: PropTypes.func,

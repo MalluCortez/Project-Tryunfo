@@ -46,7 +46,7 @@ Card.defaultProps = {
   cardAttr3: PropTypes.number,
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
-  cardTrunfo: PropTypes.bool,
+  cardTrunfo: PropTypes.string,
 };
 
 export default Card;
