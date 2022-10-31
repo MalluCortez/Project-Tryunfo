@@ -28,12 +28,10 @@ class App extends React.Component {
     cardAttr1 = Number(cardAttr1);
     cardAttr2 = Number(cardAttr2);
     cardAttr3 = Number(cardAttr3);
-    console.log(typeof cardAttr1);
     const cardAttrValue = 90;
     const sumAttr = 210;
-    const isValidNumber = cardAttr1 >= cardAttrValue || cardAttr2 >= cardAttrValue
-    || cardAttr3 >= cardAttrValue
-    || (cardAttr1 + cardAttr2 + cardAttr3) >= sumAttr;
+    const isValidNumber = cardAttr1 > cardAttrValue || cardAttr2 > cardAttrValue
+    || cardAttr3 > cardAttrValue || (cardAttr1 + cardAttr2 + cardAttr3) > sumAttr;
     const noNegativeNumbers = cardAttr1 < 0
     || cardAttr2 < 0 || cardAttr3 < 0;
 
@@ -53,7 +51,8 @@ class App extends React.Component {
   };
 
   onInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, type, checked } = event.target;
+    const value = type === 'checkbox' ? checked : event.target.value;
     this.setState({
       [name]: value,
     }, () => {
