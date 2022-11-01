@@ -33,8 +33,8 @@ class App extends React.Component {
     const sumAttr = 210;
     const isValidNumber = cardAttr1 > cardAttrValue || cardAttr2 > cardAttrValue
     || cardAttr3 > cardAttrValue || (cardAttr1 + cardAttr2 + cardAttr3) > sumAttr;
-    const noNegativeNumbers = cardAttr1 < 0
-    || cardAttr2 < 0 || cardAttr3 < 0;
+    const noNegativeNumbers = cardAttr1 < 1
+    || cardAttr2 < 1 || cardAttr3 < 1;
 
     return isValidNumber || noNegativeNumbers;
   };
@@ -95,34 +95,48 @@ class App extends React.Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage, cardRare,
-      cardTrunfo, hasTrunfo, isSaveButtonDisabled,
+      cardTrunfo, hasTrunfo, isSaveButtonDisabled, cardList,
       /* onInputChange, onSaveButtonClick */ } = this.state;
     return (
       <div>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-        />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
+        <header>
+          ADICIONE NOVA CARTA
+          <Form
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+          />
+        </header>
+        <section>
+          TODAS AS CARTAS
+          { cardList.map((card) => (
+            <Card
+              key={ card.cardName }
+              cardName={ card.cardName }
+              cardDescription={ card.cardDescription }
+              cardAttr1={ card.cardAttr1 }
+              cardAttr2={ card.cardAttr2 }
+              cardAttr3={ card.cardAttr3 }
+              cardImage={ card.cardImage }
+              cardRare={ card.cardRare }
+              cardTrunfo={ card.cardTrunfo }
+            />
+          ))}
+        </section>
+        <ul>
+          <li>
+            -
+          </li>
+        </ul>
       </div>
     );
   }
