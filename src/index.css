@@ -13,9 +13,10 @@ form {
   background-color: white;
   color: #1f3c2c;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-top: 20px;
   text-align: left;
   padding: 10px;
+  width: 1300px;
+  border-radius: 5px;
 }
 
 code {
@@ -44,11 +45,12 @@ input {
 
 header {
   background-color: #046b52;
-  padding: 20px;
-  font-size: 30px;
   margin-top: 20px;
   padding: 10px;
   margin: 40px;
+  display: flex;
+  flex-basis: 100%;
+  border-radius: 5px;
   text-align-last: left;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -79,7 +81,7 @@ label {
 
 
 button {
-  background-color: rgb(89, 255, 122);
+  background-color: #046b52;
   font-weight: bold;
   border: none;
   border-radius: 5px;
@@ -96,12 +98,45 @@ button {
 section {
   background-color: #ffffff;
   color: #235e3d;
-  padding: 20px;
   font-size: 30px;
   margin-top: 20px;
   padding: 10px;
   margin: 40px;
-  text-align-last: left;
+  display: flexbox;
+  flex-basis: 100%;
+  justify-content: center;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+h2 {
+  text-align: center;
+}
+
+h3 {
+  background-color: white;
+  color: #1f3c2c;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.card {
+  background-color: #1f3c2c;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 30px;
+  margin: 10px;
+  width: 400px;
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  font-size: 18px;
+  
+}
+
+img {
+  max-width: 300px;
+  max-height:300px;
+  width: auto;
+  height: auto;
+  display: flexbox;
+}

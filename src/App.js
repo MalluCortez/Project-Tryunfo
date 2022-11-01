@@ -99,25 +99,37 @@ class App extends React.Component {
       /* onInputChange, onSaveButtonClick */ } = this.state;
     return (
       <div>
+        <h2>ADICIONE NOVA CARTA</h2>
         <header>
-          ADICIONE NOVA CARTA
-          <Form
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            hasTrunfo={ hasTrunfo }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
-            onInputChange={ this.onInputChange }
-            onSaveButtonClick={ this.onSaveButtonClick }
-          />
+          <div>
+            <Form
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onInputChange={ this.onInputChange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+            />
+          </div>
+          <div className="card">
+            <h3 data-testid="name-card">{ cardName }</h3>
+            <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+            <h3 data-testid="description-card">{ cardDescription }</h3>
+            <h3 data-testid="attr1-card">{ cardAttr1 }</h3>
+            <h3 data-testid="attr2-card">{ cardAttr2 }</h3>
+            <h3 data-testid="attr3-card">{ cardAttr3 }</h3>
+            <h3 data-testid="rare-card">{ cardRare }</h3>
+            { cardTrunfo ? <h3 data-testid="trunfo-card">Super Trunfo</h3> : null }
+          </div>
         </header>
+        <h2>TODAS AS CARTAS</h2>
         <section>
-          TODAS AS CARTAS
           { cardList.map((card) => (
             <Card
               key={ card.cardName }
@@ -132,11 +144,6 @@ class App extends React.Component {
             />
           ))}
         </section>
-        <ul>
-          <li>
-            -
-          </li>
-        </ul>
       </div>
     );
   }
