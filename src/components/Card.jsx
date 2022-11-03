@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 class Card extends Component {
   render() {
     const { cardName, cardDescription, cardAttr1,
-      cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo } = this.props;
+      cardAttr2, cardAttr3, cardImage, cardRare, cardTrunfo,
+      onDeleteButtonClick } = this.props;
     return (
       <div className="card">
         <h3 data-testid="name-card">{ cardName }</h3>
@@ -22,6 +23,14 @@ class Card extends Component {
         <h3 data-testid="rare-card">{ cardRare }</h3>
 
         { cardTrunfo ? <h3 data-testid="trunfo-card">Super Trunfo</h3> : null }
+
+        <button
+          type="submit"
+          data-testid="delete-button"
+          onClick={ () => onDeleteButtonClick(cardName) }
+        >
+          Excluir
+        </button>
       </div>
     );
   }
@@ -36,6 +45,7 @@ Card.propTypes = {
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.bool,
+  onDeleteButtonClick: PropTypes.func,
 };
 
 Card.defaultProps = {
@@ -47,6 +57,7 @@ Card.defaultProps = {
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.string,
+  onDeleteButtonClick: PropTypes.func,
 };
 
 export default Card;

@@ -82,6 +82,12 @@ class App extends React.Component {
     }));
   };
 
+  onDeleteButtonClick = (cardName) => {
+    const { cardList } = this.state;
+    cardList.splice(cardName, 1);
+    this.setState({ cardList });
+  };
+
   onInputChange = (event) => {
     const { name, type, checked } = event.target;
     const value = type === 'checkbox' ? checked : event.target.value;
@@ -141,6 +147,7 @@ class App extends React.Component {
               cardImage={ card.cardImage }
               cardRare={ card.cardRare }
               cardTrunfo={ card.cardTrunfo }
+              onDeleteButtonClick={ this.onDeleteButtonClick }
             />
           ))}
         </section>
