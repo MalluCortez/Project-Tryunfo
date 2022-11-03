@@ -82,10 +82,26 @@ class App extends React.Component {
     }));
   };
 
+  verificationHasTrunfo = () => {
+    const { cardList } = this.state;
+    const verificationTrundo = cardList.some((trunfo) => trunfo.cardTrunfo === true);
+    if (verificationTrundo) {
+      this.setState({
+        hasTrunfo: verificationTrundo,
+      });
+    } else {
+      this.setState({
+        hasTrunfo: false,
+      });
+    }
+  };
+
   onDeleteButtonClick = (cardName) => {
     const { cardList } = this.state;
     cardList.splice(cardName, 1);
-    this.setState({ cardList });
+    this.setState({ cardList }, () => {
+      this.verificationHasTrunfo();
+    });
   };
 
   onInputChange = (event) => {
